@@ -1,13 +1,14 @@
 # 🥕 Cooperator
 
-A Chrome extension that adds an "ADD TO CALENDAR" button on Park Slope Food Coop shift pages, letting you quickly add shifts to Google Calendar.
+A Chrome extension that adds an "Add to Google Calendar" button on the Park Slope Food Coop home page and shift detail pages.
 
 ## Features
 
-- One-click add to Google Calendar
-- Only appears on shifts you're scheduled for
-- Preserves shift description and requirements with formatting
-- Automatically sets EST timezone and PSFC location
+- **Home Page Integration**: Add shifts directly from your dashboard (fetches full details in background)
+- **Shift Details Integration**: One-click add button on shift confirmation pages
+- **Smart Parsing**: Automatically extracts correct date, time, and shift name (including emojis 💳)
+- **Rich Event Details**: Preserves full shift description, requirements, and location
+- **Timezone Aware**: Automatically sets EST/EDT regardless of your system time
 
 ## Installation
 
@@ -34,20 +35,27 @@ git clone https://github.com/YOUR_USERNAME/cooperator.git
 
 ### Step 3: Use It
 
-1. Log in to [members.foodcoop.com](https://members.foodcoop.com)
-2. Navigate to a shift you're **scheduled for**
-3. Click **ADD TO CALENDAR**
-4. Google Calendar opens with the shift pre-filled
+**On the Home Page:**
+
+1. Log in to [members.foodcoop.com](https://members.foodcoop.com/services/home)
+2. Look for "Add to Google Calendar ⧉" next to your scheduled shifts
+3. Click it to open a pre-filled Google Calendar event
+
+**On Shift Confirmation Pages:**
+
+1. Navigate to any shift you're scheduled for
+2. Click the large **ADD TO CALENDAR** button
+3. Google Calendar opens with the shift pre-filled
 
 ## What Gets Added
 
 | Field | Value |
 |-------|-------|
 | **Title** | `PSFC Shift: [Name] (Shift #XXXXXX)` |
-| **Duration** | 2 hours 45 minutes |
+| **Duration** | 2 hours 45 minutes (based on shift time) |
 | **Timezone** | America/New_York (EST/EDT) |
 | **Location** | Park Slope Food Coop, 782 Union St, Brooklyn, NY 11215 |
-| **Description** | Full shift description and requirements |
+| **Description** | Full shift description, requirements, and link to shift page |
 
 ## Privacy
 
