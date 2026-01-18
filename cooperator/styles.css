@@ -1,0 +1,52 @@
+/* Cooperator Extension Styles */
+/* Match the site's Bootstrap btn styling */
+
+.cooperator-calendar-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  /* Green button style to complement the red Cancel button */
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.cooperator-calendar-btn:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+  text-decoration: none;
+}
+
+.cooperator-calendar-btn:active,
+.cooperator-calendar-btn:focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+  outline: none;
+}
+
+.cooperator-success-msg {
+  color: #5cb85c;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cooperator-success-msg.show {
+  opacity: 1;
+}

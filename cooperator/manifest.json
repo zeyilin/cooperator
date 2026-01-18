@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Cooperator",
+  "version": "1.0.0",
+  "description": "Add Park Slope Food Coop shifts to Google Calendar with one click",
+  "permissions": [],
+  "host_permissions": [
+    "https://members.foodcoop.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://members.foodcoop.com/services/shift_claim/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
