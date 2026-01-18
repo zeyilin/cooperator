@@ -30,9 +30,7 @@ git clone https://github.com/YOUR_USERNAME/cooperator.git
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable **Developer mode** (toggle in the top-right corner)
 3. Click **Load unpacked**
-4. Select the `cooperator` folder (the one containing `manifest.json`)
-
-![Chrome Extensions Page](https://developer.chrome.com/static/docs/extensions/get-started/tutorial/hello-world/image/extensions-page-e702401975f3c.png)
+4. Select the folder containing `manifest.json`
 
 ### Step 3: Use It
 
@@ -60,3 +58,7 @@ git clone https://github.com/YOUR_USERNAME/cooperator.git
 ## License
 
 MIT
+
+---
+
+<p align="center"><sub>Created with <a href="https://cloud.google.com/">Google Antigravity</a> 🚀</sub></p>
