@@ -44,7 +44,7 @@
         const params = new URLSearchParams();
 
         params.set('action', 'TEMPLATE');
-        const titleParts = [`PSFC Shift: ${shiftDetails.titleWithEmoji}`];
+        const titleParts = [`PSFC Shift | ${shiftDetails.titleWithEmoji}`];
         if (shiftDetails.shiftId) {
             titleParts.push(`(Shift #${shiftDetails.shiftId})`);
         }
@@ -168,7 +168,7 @@
             details.description = descriptionElements.join('\n\n');
 
             // Get shift requirements
-            const requirementsHeader = Array.from(doc.querySelectorAll('h2, h3, strong, b'))
+            const requirementsHeader = Array.from(doc.querySelectorAll('h2, h3, h4, h5, strong, b'))
                 .find(el => el.textContent.includes('Shift Requirements'));
             if (requirementsHeader) {
                 let ul = requirementsHeader.nextElementSibling;
@@ -313,13 +313,15 @@
         const header = document.querySelector('h4') || document.querySelector('h1, h2');
         if (header) {
             const titleText = header.textContent.trim();
-            const match = titleText.match(/^([A-Za-z][A-Za-z\s]*[A-Za-z])\s*([\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}])?/u);
+            // Match anything up to the emoji (or end of string)
+            const match = titleText.match(/^(.+?)\s*([\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}])?\s*$/u);
             if (match) {
                 details.title = match[1].trim();
                 details.titleWithEmoji = match[2] ? `${match[1].trim()} ${match[2]}` : match[1].trim();
             } else {
-                details.title = titleText.split(/\s+/)[0];
-                details.titleWithEmoji = details.title;
+                // Fallback
+                details.title = titleText;
+                details.titleWithEmoji = titleText;
             }
         }
 
@@ -368,7 +370,7 @@
         details.description = descriptionElements.join('\n\n');
 
         // Get shift requirements
-        const requirementsHeader = Array.from(document.querySelectorAll('h2, h3, strong, b'))
+        const requirementsHeader = Array.from(document.querySelectorAll('h2, h3, h4, h5, strong, b'))
             .find(el => el.textContent.includes('Shift Requirements'));
         if (requirementsHeader) {
             let ul = requirementsHeader.nextElementSibling;

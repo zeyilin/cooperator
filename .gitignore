@@ -1,17 +1,33 @@
-# macOS
+# Chrome Extension
+*.pem
+*.crx
+# Key files
+key.pem
+
+# OS/System
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
+Thumbs.db
 
-# Scratch/dev files
-scratch/
-
-# Editor
+# Editor/IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+*~
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
 
 # Logs
 *.log
+npm-debug.log*
+
+# Scratch/dev files
+scratch/
